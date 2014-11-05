@@ -33,8 +33,26 @@ data, etc.), status and paging (choice of 5, 10, 20, 50, 100, all).
 
 
 kgrcevic_aplikacija_2
-  - Enterprise applications which has EJB and Web modules. The application runs in 
-background mode thread that checks the mailbox (server address, username and 
-password are defined in the configuration file) inbox.
+  - Enterprise applications which has EJB and Web modules. The application runs in background mode thread that checks the mailbox (server address, username and password are defined in the configuration file) inbox.
+  - From the received e-mail messages, messages which has subject "NWTiS" and MIME 
+type "text / plain" call NWTiS messages. NWTiS processed messages to be transferred 
+to a folder / directory according to the settings for NWTiS messages. Other non-NWTiS messages to be transferred to folder for non-NWTiS messages. At the end of 
+each iteration processing of email messages should be sent to a JMS message (queue 
+name 1) with data about the time of start and completion of the work, the number of 
+read messages, the number NWTiS messages, etc
+  - The second task is user part or web module, which should be realized through JSF 
+(Facelets) with bilingual (Croatian and English language). Language is selected on the 
+home page of application.
+  - Web server: Glassfish, User Interface: JSF (facelets), Database: JavaDB
 
+kgrcevic_aplikacija_3
+  -  Enterprise applications which has EJB and Web modules. The application takes two 
+types of JMS messages (like MessageDriven Bean) for the state of processing email messages and zip code for that should start to take meteorological data on the 
+review of data meteorological forecasts.
+  - Web application module uses JSF (Facelets) to view the saved JMS message. The user 
+can delete selected messages or all messages.
+  - Web server: Glassfish, User Interface: JSF (facelets).
 
+Communication between applications:
+ via a web service, email messaging, JMS messaging and language-based socket 
+server.
