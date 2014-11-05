@@ -5,7 +5,7 @@ Java-Web-applications-Course-Advanced-Web-technologies-and-Services
 ![Alt text](https://github.com/krunogr/Java-Web-applications-Course-Advanced-Web-technologies-and-Services/blob/master/system_schema.JPG "Schema of system")
 
 ###The system consists the following applications:
-<u>kgrcevic_aplikacija_1</u>
+######kgrcevic_aplikacija_1
 
   - Web application runs in background mode thread that takes the current 
 meteorological data from the WeatherBug Web service for selected group of USA 
