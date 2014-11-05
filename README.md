@@ -5,7 +5,7 @@ Java-Web-applications-Course-Advanced-Web-technologies-and-Services
 ![Alt text](https://github.com/krunogr/Java-Web-applications-Course-Advanced-Web-technologies-and-Services/blob/master/system_schema.JPG "Schema of system")
 
 ###The system consists the following applications:
-kgrcevic_aplikacija_1
+<u>kgrcevic_aplikacija_1</u>
 
   - Web application runs in background mode thread that takes the current 
 meteorological data from the WeatherBug Web service for selected group of USA 
@@ -54,5 +54,4 @@ can delete selected messages or all messages.
   - Web server: Glassfish, User Interface: JSF (facelets).
 
 Communication between applications:
- via a web service, email messaging, JMS messaging and language-based socket 
-server.
+  - via a web service, email messaging, JMS messaging and language-based socket server.
