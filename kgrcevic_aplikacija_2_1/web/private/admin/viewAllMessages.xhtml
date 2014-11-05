@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>#{m.pregledPoruka_naslov}</title>
+
+    </h:head>
+    <f:view locale="#{lokalizacija.odabraniJezik}">
+        <h:body>
+            <h:form>
+                <h:selectOneListbox value="#{pregledPoruka.odabranFolder}" size="3">
+                    <f:selectItems value="#{pregledPoruka.listaFoldera}" />
+                </h:selectOneListbox>
+                <h:commandButton value="#{m.pregledPoruka_potvrdiOdabir}" action="#{pregledPoruka.pocetniFolder()}" />
+                <h:dataTable id="allMessages" value="#{pregledPoruka.listaPoruka}" var="p" border="1" >
+                    <h:column >
+                        <f:facet name="header">#{m.pregledPoruka_IDPoruke}</f:facet>
+                        <h:outputText value="#{p.id}"/>
+                    </h:column>
+
+                    <h:column >
+                        <f:facet name="header">#{m.pregledPoruka_posiljatelj}</f:facet>
+                        <h:outputText value="#{p.posiljatelj}"/>
+                    </h:column>
+
+                    <h:column >
+                        <f:facet name="header">#{m.pregledPoruka_predmet}</f:facet>
+                        <h:outputText value="#{p.naslov}"/>
+                    </h:column>
+
+                    <h:column >
+                        <f:facet name="header">#{m.pregledPoruka_vrijeme}</f:facet>
+                        <h:outputText value="#{p.datum}">
+                            <f:convertDateTime pattern="dd.MM.yyyy hh:mm:ss"/>
+                        </h:outputText>
+                    </h:column>
+
+                    <h:column>
+                        <f:facet name="header">#{m.pregledPoruka_pregled}</f:facet>
+                        <h:commandButton value="#{m.pregledSvihPoruka_poruka}" action="#{pregledPoruka.pregledPoruke2()}">
+                            <f:setPropertyActionListener target="#{pregledPoruka.porukaID}" value="#{p.id}" />
+                        </h:commandButton>
+                    </h:column>
+
+
+                    <h:column >
+                        <f:facet name="header">#{m.pregledPoruka_brisi}</f:facet>
+                        <h:commandButton value="#{m.pregledPoruka_brisi}" action="#{pregledPoruka.brisiPoruku()}">
+                            <f:setPropertyActionListener target="#{pregledPoruka.porukaID}" value="#{p.id}" />
+                        </h:commandButton>
+                    </h:column>
+
+
+
+                </h:dataTable>
+                <h:commandButton value="#{m.pregledPoruka_nazad}" action="#{pregledPoruka.nazad()}" >
+                    <f:ajax render="allMessages"/>
+                </h:commandButton>
+                <h:commandButton value="#{m.pregledPoruka_naprijed}" action="#{pregledPoruka.naprijed()}" >
+                    <f:ajax render="allMessages"/>
+                </h:commandButton><br/>
+
+            </h:form><br/>
+        </h:body>
+    </f:view>
+</html>

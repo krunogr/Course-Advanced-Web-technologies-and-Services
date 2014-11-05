@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>#{m.admin_naslov}</title>
+    </h:head>
+    <f:view locale="#{lokalizacija.odabraniJezik}">
+        <h:body>
+            <h:form>
+                <h:link outcome="allMessages" value="#{m.admin_pregledSvihPoruka}"/><br/><br/>
+                <h:link outcome="journal" value="#{m.admin_pregledDnevnika}"/><br/><br/>
+                <h:link outcome="index2" value="#{m.admin_pocetnaStranica}"/><br/><br/>
+                <a href="dokumentacija.html">#{m.admin_dokumentacija}</a>
+            </h:form>
+        </h:body>
+        </f:view>
+</html>
+

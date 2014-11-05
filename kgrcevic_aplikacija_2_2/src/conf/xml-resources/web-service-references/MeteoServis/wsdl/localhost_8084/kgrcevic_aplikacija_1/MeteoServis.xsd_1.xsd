@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2-hudson-740-. --><xs:schema xmlns:tns="http://serveri.ws.web.kgrcevic.nwtis.foi.org/" xmlns:ns1="http://api.wxbug.net/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://serveri.ws.web.kgrcevic.nwtis.foi.org/">
+
+<xs:import namespace="http://api.wxbug.net/" schemaLocation="http://localhost:8084/kgrcevic_aplikacija_1/MeteoServis?xsd=2" />
+
+<xs:element name="ZaJedanZip" type="tns:ZaJedanZip" />
+
+<xs:element name="ZaJedanZipResponse" type="tns:ZaJedanZipResponse" />
+
+<xs:element name="ZaSveZipove" type="tns:ZaSveZipove" />
+
+<xs:element name="ZaSveZipoveResponse" type="tns:ZaSveZipoveResponse" />
+
+<xs:element name="nNajcescihZipova" type="tns:nNajcescihZipova" />
+
+<xs:element name="nNajcescihZipovaResponse" type="tns:nNajcescihZipovaResponse" />
+
+<xs:element name="nZadjnihMeteoPodataka" type="tns:nZadjnihMeteoPodataka" />
+
+<xs:element name="nZadjnihMeteoPodatakaResponse" type="tns:nZadjnihMeteoPodatakaResponse" />
+
+<xs:element name="podaciZaZipUIntervalu" type="tns:podaciZaZipUIntervalu" />
+
+<xs:element name="podaciZaZipUIntervaluResponse" type="tns:podaciZaZipUIntervaluResponse" />
+
+<xs:complexType name="ZaJedanZip">
+<xs:sequence>
+<xs:element name="zip" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ZaJedanZipResponse">
+<xs:sequence>
+<xs:element name="return" type="ns1:LiveWeatherData" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="nNajcescihZipova">
+<xs:sequence>
+<xs:element name="broj" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="nNajcescihZipovaResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ZaSveZipove">
+<xs:sequence />
+</xs:complexType>
+
+<xs:complexType name="ZaSveZipoveResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="nZadjnihMeteoPodataka">
+<xs:sequence>
+<xs:element name="zip" type="xs:string" minOccurs="0" />
+<xs:element name="broj" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="nZadjnihMeteoPodatakaResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="podaciZaZipUIntervalu">
+<xs:sequence>
+<xs:element name="dateod" type="xs:string" minOccurs="0" />
+<xs:element name="datedo" type="xs:string" minOccurs="0" />
+<xs:element name="zip" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="podaciZaZipUIntervaluResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>#{m.pregledSvihPoruka_poruka}</title>
+    </h:head>
+    <f:view locale="#{lokalizacija.odabraniJezik}">
+        <h:body>
+          <h:form>
+                <h:panelGrid columns="2" border="1">
+                    <h:column>
+                        <h:outputText value="#{m.pregledPoruka_IDPoruke}"/>
+                    </h:column>
+                    <h:column>
+                        <h:outputText value="#{pregledPoruke2.poruka.id}"/>
+                    </h:column>
+                    <h:column>
+                        <h:outputText value="#{m.pregledPoruke_pošiljatelj}"/>
+                    </h:column>
+                    <h:column>
+                        <h:outputText value="#{pregledPoruke2.poruka.posiljatelj}"/>
+                    </h:column>
+                    <h:column>
+                        <h:outputText value="#{m.pregledSvihPoruka_vrijeme}"/>
+                    </h:column>
+                    <h:column>
+                        <h:outputText value="#{pregledPoruke2.poruka.datum}"/>
+                    </h:column>
+                    <h:column>
+                        <h:outputText value="#{m.pregledSvihPoruka_predmet}"/>
+                    </h:column>
+                    <h:column>
+                        <h:outputText value="#{pregledPoruke2.poruka.naslov}"/>
+                    </h:column>
+                    <h:column>
+                        <h:outputText value="#{m.pregledPoruke_sadrzaj}"/>
+                    </h:column>
+                    <h:column>
+                        <h:outputText value="#{pregledPoruke2.poruka.sadrzaj}" escape="false"/>
+                    </h:column>
+                </h:panelGrid><br/>
+                <h:link outcome="allMessages" value="#{m.admin_pregledSvihPoruka}"/><br/>
+            </h:form> 
+        </h:body>
+    </f:view>
+</html>
+

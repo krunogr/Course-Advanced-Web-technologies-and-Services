@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>#{m.emailPostavke_naslov}</title>
+    </h:head>
+    <f:view locale="#{lokalizacija.odabraniJezik}">
+        <h:body>
+            <h:form>
+                #{pregledMeteoPodataka.reset()}
+                <h:link outcome="javniDio_zaJedanZip" value="#{m.javniDio_zaJedanZip}"/><br/>
+                <h:link outcome="javniDio_zaSveZipove" value="#{m.javniDio_zaSveZipove}"/><br/>
+                <h:link outcome="javniDio_nNajcescihZipova" value="#{m.javniDio_nNajcescihZipova}"/><br/>
+                <h:link outcome="javniDio_nZadjnihMeteoPodataka" value="#{m.javniDio_nZadjnihMeteoPodataka}"/><br/>
+                <h:link outcome="javniDio_podaciZaZipUIntervalu" value="#{m.javniDio_podaciZaZipUIntervalu}"/><br/>
+            </h:form>
+        </h:body>
+    </f:view>
+</html>
+

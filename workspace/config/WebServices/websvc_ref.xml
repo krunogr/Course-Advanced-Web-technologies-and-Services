@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.7.0_21" class="java.beans.XMLDecoder">
+ <object class="java.util.ArrayList"/>
+ <int>1</int>
+ <object class="org.netbeans.modules.websvc.manager.model.WebServiceData">
+  <void property="URL">
+   <string>C:\Users\Kruno\Dropbox\workspace\config\WebServices\MeteoServis\catalog\localhost_8084\kgrcevic_aplikacija_1\MeteoServis.wsdl</string>
+  </void>
+  <void property="catalog">
+   <string>C:\Users\Kruno\Dropbox\workspace\config\WebServices\MeteoServis\catalog\catalog.xml</string>
+  </void>
+  <void property="compiled">
+   <boolean>true</boolean>
+  </void>
+  <void property="groupId">
+   <string>default</string>
+  </void>
+  <void property="id">
+   <string>webservice6914174956402212125</string>
+  </void>
+  <void property="jaxWsDescriptorPath">
+   <string>MeteoServis/jaxws/MeteoServis.xml</string>
+  </void>
+  <void property="jaxWsEnabled">
+   <boolean>true</boolean>
+  </void>
+  <void property="name">
+   <string>MeteoServis</string>
+  </void>
+  <void property="originalWsdl">
+   <string>http://localhost:8084/kgrcevic_aplikacija_1/MeteoServis?wsdl</string>
+  </void>
+  <void property="packageName">
+   <string></string>
+  </void>
+  <void property="state">
+   <object class="java.lang.Enum" method="valueOf">
+    <class>org.netbeans.modules.websvc.manager.model.WebServiceData$State</class>
+    <string>WSDL_SERVICE_COMPILED</string>
+   </object>
+  </void>
+  <void property="wsdlService">
+   <object class="org.netbeans.modules.websvc.api.jaxws.wsdlmodel.WsdlService"/>
+  </void>
+ </object>
+ <int>1</int>
+ <object class="org.netbeans.modules.websvc.manager.model.WebServiceGroup">
+  <void property="id">
+   <string>default</string>
+  </void>
+  <void property="webServiceIds">
+   <void method="add">
+    <string>webservice6914174956402212125</string>
+   </void>
+  </void>
+ </object>
+</java>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>NWTIS konfiguracija</comment>
+<entry key="server.database">jdbc:mysql://127.0.0.1/</entry>
+<entry key="admin.username">nwtis_admin</entry>
+<entry key="admin.password">nwtis_foi</entry>
+<entry key="admin.database">mysql</entry>
+<entry key="user.username">nwtis_g3</entry>
+<entry key="user.password">g3_nwtis</entry>
+<entry key="user.database">nwtis_kgrcevic_bp_1</entry>
+<entry key="driver.database.odbc">sun.jdbc.odbc.JdbcOdbcDriver</entry>
+<entry key="driver.database.mysql">com.mysql.jdbc.Driver</entry>
+<entry key="driver.database.derby">org.apache.derby.jdbc.ClientDriver</entry>
+<entry key="driver.database.postgresql">org.postgresql.Driver</entry>
+<entry key="interval">20</entry>
+<entry key="weatherBugCode">A4780419826</entry>
+<entry key="datoteka">PrijavljeniKorisnici</entry>
+<entry key="port">8555</entry>
+<entry key="socketPort">8016</entry>
+<entry key="socketAdresa">127.0.0.1</entry>
+<entry key="adresa_primatelja">servis@nwtis.nastava.foi.hr</entry>
+<entry key="predmet_poruke">NWTiS_kgrcevic</entry>
+<entry key="posiljatelj">kgrcevic@nwtis.nastava.foi.hr</entry>
+<entry key="smtp_server">localhost</entry>
+<entry key="smtp_port">25</entry>
+
+</properties>

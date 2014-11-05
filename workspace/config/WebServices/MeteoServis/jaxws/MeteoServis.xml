@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.7.0_21" class="java.beans.XMLDecoder">
+ <object class="org.netbeans.modules.websvc.manager.api.WebServiceDescriptor">
+  <void property="jars">
+   <void method="add">
+    <object class="org.netbeans.modules.websvc.saas.spi.websvcmgr.WsdlServiceProxyDescriptor$JarEntry">
+     <void property="name">
+      <string>MeteoServis.jar</string>
+     </void>
+     <void property="type">
+      <string>proxy</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="org.netbeans.modules.websvc.saas.spi.websvcmgr.WsdlServiceProxyDescriptor$JarEntry">
+     <void property="name">
+      <string>MeteoServis-src.jar</string>
+     </void>
+     <void property="type">
+      <string>source</string>
+     </void>
+    </object>
+   </void>
+  </void>
+  <void property="model">
+   <object class="org.netbeans.modules.websvc.api.jaxws.wsdlmodel.WsdlService"/>
+  </void>
+  <void property="name">
+   <string>MeteoServis</string>
+  </void>
+  <void property="packageName">
+   <string>org.foi.nwtis.kgrcevic.web.ws.serveri</string>
+  </void>
+  <void property="wsType">
+   <int>1</int>
+  </void>
+  <void property="wsdl">
+   <string>file:/C:/Users/Kruno/Dropbox/workspace/config/WebServices/MeteoServis/catalog/localhost_8084/kgrcevic_aplikacija_1/MeteoServis.wsdl</string>
+  </void>
+  <void property="xmlDescriptor">
+   <string>C:\Users\Kruno\Dropbox\workspace\config\WebServices\MeteoServis\jaxws\MeteoServis.xml</string>
+  </void>
+ </object>
+</java>

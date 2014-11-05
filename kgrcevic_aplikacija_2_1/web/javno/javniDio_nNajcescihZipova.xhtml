@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>#{m.javniDio_nNajcescihZipova}</title>
+    </h:head>
+    <f:view locale="#{lokalizacija.odabraniJezik}">
+        <h:body>
+            <h:form>
+                <h:outputText value="#{m.najcesci_zipKod}: "/><h:inputText id="MP" value="#{pregledMeteoPodataka.najcesci}"/><br/><br/>
+                <h:dataTable id ="tabela" value="#{pregledMeteoPodataka.listaMP}" var="p" border="1"  first="#{pregledMeteoPodataka.kreniOd}" rows="#{pregledMeteoPodataka.brojPodataka}">
+                    <h:column>
+                        <f:facet name="header">#{m.najcesci_zipKod}</f:facet>
+                        <h:outputText value="#{p.zipZahtjevani}"/>
+                    </h:column> 
+                    <h:column>
+                        <f:facet name="header">#{m.najcesci_brojPreuzimanja}</f:facet>
+                        <h:outputText value=" #{p.brojPreuzimanja}"/>
+                    </h:column> 
+                </h:dataTable>
+                <h:commandButton value="#{m.najcesci_trazi}" action="#{pregledMeteoPodataka.nNajcescihZipova()}">
+                    <f:ajax render="tabela" execute="MP" immediate="true"/>
+                </h:commandButton>
+                <h:commandButton value="#{m.pregledPoruka_nazad}" action="#{pregledMeteoPodataka.nazad('nNajcescihZipova')}" >
+                    <f:ajax render="tabela" execute="MP" immediate="true"/>
+                </h:commandButton>
+                <h:commandButton value="#{m.pregledPoruka_naprijed}" action="#{pregledMeteoPodataka.naprijed('nNajcescihZipova')}" >
+                    <f:ajax render="tabela" execute="MP" immediate="true"/>
+                </h:commandButton><br/>
+            </h:form>
+        </h:body>
+    </f:view>
+</html>
+

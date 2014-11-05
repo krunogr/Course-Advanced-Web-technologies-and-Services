@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>#{m.javniDio_podaciZaZipUIntervalu}</title>
+    </h:head>
+    <f:view locale="#{lokalizacija.odabraniJezik}">
+        <h:body>
+            <h:form>
+                <h:outputText value="#{m.najcesci_zipKod}:"/><h:inputText id="zipKod" value="#{pregledMeteoPodataka.zipKod}" />
+                <h:outputText value="#{m.interval_Od}:"/><h:inputText id="intervalOd" value="#{pregledMeteoPodataka.intervalOd}"/>
+                <h:outputText value="#{m.interval_Do}:"/><h:inputText id="intervalDo" value="#{pregledMeteoPodataka.intervalDo}"/><br/><br/>
+                <h:dataTable id ="tabela" value="#{pregledMeteoPodataka.listaMP}" var="p" border="1" first="#{pregledMeteoPodataka.kreniOd}" rows="#{pregledMeteoPodataka.brojPodataka}">
+                    <h:column>
+                        <f:facet name="header">#{m.najcesci_zipKod}</f:facet>
+                        <h:outputText value="#{p.zipZahtjevani}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">#{m.zadnji_grad}</f:facet>
+                        <h:outputText value="#{p.grad}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">#{m.zadnji_temperatura}</f:facet>
+                        <h:outputText value="#{p.temperatura}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">#{m.interval_VremZona}</f:facet>
+                        <h:outputText value="#{p.vremZona}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">#{m.zadnji_stopaKisa}</f:facet>
+                        <h:outputText value="#{p.kisaStopa}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">#{m.zadnji_vlaga}</f:facet>
+                        <h:outputText value="#{p.vlaga}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">#{m.zadnji_vjetarBrzina}</f:facet>
+                        <h:outputText value="#{p.vjetarBrzina}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">#{m.zadnji_vjetarSmjer}</f:facet>
+                        <h:outputText value="#{p.vjetarSmjer}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">#{m.zadnji_vrijemePreuzimanja}</f:facet>
+                        <h:outputText value="#{p.vrijemePreuzimanja}"/>
+                    </h:column>   
+                </h:dataTable>
+                <h:commandButton value="#{m.najcesci_trazi}" action="#{pregledMeteoPodataka.podaciZaZipUIntervalu()}">
+                    <f:ajax render="tabela" execute="zipKod intervalOd intervalDo" immediate="true"/>
+                </h:commandButton>
+                <h:commandButton value="#{m.pregledPoruka_nazad}" action="#{pregledMeteoPodataka.nazad('podaciZaZipUIntervalu')}" >
+                    <f:ajax render="tabela" execute="zipKod intervalOd intervalDo" immediate="true"/>
+                </h:commandButton>
+                <h:commandButton value="#{m.pregledPoruka_naprijed}" action="#{pregledMeteoPodataka.naprijed('podaciZaZipUIntervalu')}" >
+                    <f:ajax render="tabela" execute="zipKod intervalOd intervalDo" immediate="true"/>
+                </h:commandButton><br/>
+            </h:form>
+        </h:body>
+    </f:view>
+</html>
+

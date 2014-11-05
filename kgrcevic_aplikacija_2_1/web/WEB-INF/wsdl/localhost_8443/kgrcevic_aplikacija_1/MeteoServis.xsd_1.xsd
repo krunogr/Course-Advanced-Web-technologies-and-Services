@@ -1,0 +1,102 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2-hudson-740-. --><xs:schema xmlns:tns="http://serveri.ws.web.kgrcevic.nwtis.foi.org/" xmlns:ns1="http://api.wxbug.net/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://serveri.ws.web.kgrcevic.nwtis.foi.org/">
+
+<xs:import namespace="http://api.wxbug.net/" schemaLocation="https://localhost:8443/kgrcevic_aplikacija_1/MeteoServis?xsd=2" />
+
+<xs:element name="nNajcescihZipova" type="tns:nNajcescihZipova" />
+
+<xs:element name="nNajcescihZipovaResponse" type="tns:nNajcescihZipovaResponse" />
+
+<xs:element name="nZadjnihMeteoPodataka" type="tns:nZadjnihMeteoPodataka" />
+
+<xs:element name="nZadjnihMeteoPodatakaResponse" type="tns:nZadjnihMeteoPodatakaResponse" />
+
+<xs:element name="podaciZaZipUIntervalu" type="tns:podaciZaZipUIntervalu" />
+
+<xs:element name="podaciZaZipUIntervaluResponse" type="tns:podaciZaZipUIntervaluResponse" />
+
+<xs:element name="zaJedanZip" type="tns:zaJedanZip" />
+
+<xs:element name="zaJedanZipResponse" type="tns:zaJedanZipResponse" />
+
+<xs:element name="zaSveZipove" type="tns:zaSveZipove" />
+
+<xs:element name="zaSveZipoveResponse" type="tns:zaSveZipoveResponse" />
+
+<xs:complexType name="nZadjnihMeteoPodataka">
+<xs:sequence>
+<xs:element name="zip" type="xs:string" minOccurs="0" />
+<xs:element name="broj" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="nZadjnihMeteoPodatakaResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:meteoPodatak" minOccurs="0" maxOccurs="unbounded" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="meteoPodatak">
+<xs:sequence>
+<xs:element name="broj_preuzimanja" type="xs:string" minOccurs="0" />
+<xs:element name="grad" type="xs:string" minOccurs="0" />
+<xs:element name="kisa_stopa" type="xs:string" minOccurs="0" />
+<xs:element name="temperatura" type="xs:string" minOccurs="0" />
+<xs:element name="tlak" type="xs:string" minOccurs="0" />
+<xs:element name="vjetar_brzina" type="xs:string" minOccurs="0" />
+<xs:element name="vjetar_smjer" type="xs:string" minOccurs="0" />
+<xs:element name="vlaga" type="xs:string" minOccurs="0" />
+<xs:element name="vrem_zona" type="xs:string" minOccurs="0" />
+<xs:element name="vrijeme_preuzimanja" type="xs:string" minOccurs="0" />
+<xs:element name="zipVraceni" type="xs:string" minOccurs="0" />
+<xs:element name="zipZahtjevani" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="nNajcescihZipova">
+<xs:sequence>
+<xs:element name="broj" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="nNajcescihZipovaResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:meteoPodatak" minOccurs="0" maxOccurs="unbounded" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="zaSveZipove">
+<xs:sequence />
+</xs:complexType>
+
+<xs:complexType name="zaSveZipoveResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:meteoPodatak" minOccurs="0" maxOccurs="unbounded" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="zaJedanZip">
+<xs:sequence>
+<xs:element name="zip" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="zaJedanZipResponse">
+<xs:sequence>
+<xs:element name="return" type="ns1:LiveWeatherData" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="podaciZaZipUIntervalu">
+<xs:sequence>
+<xs:element name="dateod" type="xs:string" minOccurs="0" />
+<xs:element name="datedo" type="xs:string" minOccurs="0" />
+<xs:element name="zip" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="podaciZaZipUIntervaluResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:meteoPodatak" minOccurs="0" maxOccurs="unbounded" />
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

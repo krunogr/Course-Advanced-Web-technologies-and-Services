@@ -1,0 +1,119 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<!-- =========== FULL CONFIGURATION FILE ================================== -->
+
+<faces-config version="2.1"
+              xmlns="http://java.sun.com/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_1.xsd">
+    <application>
+        <locale-config>
+            <default-locale>hr</default-locale>
+            <supported-locale>hr</supported-locale>
+            <supported-locale>en</supported-locale>
+        </locale-config>
+        <resource-bundle>
+            <var>m</var>
+            <base-name>org.foi.nwtis.kgrcevic.i18n</base-name>
+        </resource-bundle>
+    </application>
+    <navigation-rule>
+        <from-view-id>/index.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>#{lokalizacija.odaberiJezik}</from-action>
+            <from-outcome>OK</from-outcome>
+            <to-view-id>/index2.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+        <from-view-id>/index2.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>publicPart</from-outcome>
+            <to-view-id>/javniDio.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>adminPart</from-outcome>
+            <to-view-id>/private/admin/admin.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>userPart</from-outcome>
+            <to-view-id>/private/user/user.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>loginPart</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+        <from-view-id>/private/admin/admin.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>index2</from-outcome>
+            <to-view-id>/index2.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>allMessages</from-outcome>
+            <to-view-id>/private/admin/viewAllMessages.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>journal</from-outcome>
+            <to-view-id>/private/admin/journal.xhtml</to-view-id>
+        </navigation-case>        
+        <navigation-case>
+            <from-action>#{admin.viewMessage()}</from-action>
+            <from-outcome>OK</from-outcome>
+            <to-view-id>/private/admin/viewMessage.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+        <from-view-id>/private/admin/viewAllMessages.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>admin</from-outcome>
+            <to-view-id>/private/admin/admin.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>allMessages</from-outcome>
+            <to-view-id>/private/admin/viewAllMessages.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-action>#{pregledPoruka.pregledPoruke2()}</from-action>
+            <from-outcome>OK</from-outcome>
+            <to-view-id>/private/admin/viewMessage.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/private/admin/viewMessage.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>allMessages</from-outcome>
+            <to-view-id>/private/admin/viewAllMessages.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>javniDio.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>javniDio_zaJedanZip</from-outcome>
+            <to-view-id>javno/javniDio_zaJedanZip.xhtml</to-view-id>
+        </navigation-case>
+         <navigation-case>
+            <from-outcome>javniDio_zaSveZipove</from-outcome>
+            <to-view-id>javno/javniDio_zaSveZipove.xhtml</to-view-id>
+        </navigation-case>
+         <navigation-case>
+            <from-outcome>javniDio_nNajcescihZipova</from-outcome>
+            <to-view-id>javno/javniDio_nNajcescihZipova.xhtml</to-view-id>
+        </navigation-case>
+         <navigation-case>
+            <from-outcome>javniDio_nZadjnihMeteoPodataka</from-outcome>
+            <to-view-id>javno/javniDio_nZadjnihMeteoPodataka.xhtml</to-view-id>
+        </navigation-case>
+         <navigation-case>
+            <from-outcome>javniDio_podaciZaZipUIntervalu</from-outcome>
+            <to-view-id>javno/javniDio_podaciZaZipUIntervalu.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    
+    
+</faces-config>
